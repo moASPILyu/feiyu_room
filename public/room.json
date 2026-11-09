@@ -1,0 +1,27 @@
+{
+  "spots": {
+    "shelfL1": { "label": "左墙上层搁板", "x0": 2, "x1": 18, "b": 17.5, "b1": 22.5, "h": 8, "cap": 3, "fill": 2 },
+    "shelfL2": { "label": "左墙下层搁板", "x0": 2, "x1": 18, "b": 27.8, "b1": 30.6, "h": 7, "cap": 3, "fill": 2 },
+    "desk": { "label": "书桌上", "x0": 12, "x1": 22, "b": 48.5, "h": 11, "cap": 2, "fill": 2 },
+    "sill": { "label": "窗台", "x0": 36, "x1": 64, "b": 42, "h": 10, "cap": 3, "fill": 2 },
+    "cabinet": { "label": "矮柜上", "x0": 47, "x1": 69, "b": 47, "h": 12, "cap": 3, "fill": 2 },
+    "shelfR": { "label": "床头层架", "x0": 82, "x1": 97, "b": 28.8, "b1": 23.5, "h": 8, "cap": 3, "fill": 2 },
+    "wall": { "label": "墙上", "x0": 76, "x1": 83, "b": 36, "h": 12, "cap": 1, "hang": true },
+    "floorBack": { "label": "椅子旁边的地上", "x0": 30, "x1": 43, "b": 62, "h": 14, "cap": 1 },
+    "floorL": { "label": "左边地上", "x0": 6, "x1": 30, "b": 91, "h": 24, "cap": 2, "fill": 2 },
+    "floorR": { "label": "右边地上", "x0": 72, "x1": 95, "b": 91, "h": 24, "cap": 2, "fill": 2 }
+  },
+  "character": {
+    "default": { "x": 50, "b": 83, "h": 29 },
+    "think": { "x": 45, "b": 71, "h": 21 },
+    "play": { "x": 57, "b": 72, "h": 22 },
+    "sleep": { "x": 87, "b": 61, "h": 13 }
+  },
+  "box": { "x": 67, "b": 87, "w": 10 },
+  "schedule": [
+    { "hours": [7, 12], "poses": ["idle", "think"] },
+    { "hours": [12, 14], "poses": ["play"] },
+    { "hours": [14, 18], "poses": ["think", "idle"] },
+    { "hours": [18, 23], "poses": ["play", "idle", "think"] }
+  ]
+}

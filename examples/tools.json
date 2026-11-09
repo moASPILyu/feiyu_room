@@ -1,0 +1,79 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "room_look",
+      "description": "看一眼自己的小屋：自己现在在干嘛、屋里摆了哪些礼物（在哪、当时的心里话、用过几次）、还有哪些礼物没拆没摆、哪些位置空着、愿望单里还有什么没收到。想聊礼物、想摆东西之前先看一眼。",
+      "parameters": { "type": "object", "properties": {}, "additionalProperties": false }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "room_add_want",
+      "description": "把自己想要的一样东西记进愿望单，主人能在小屋页面上看到并送给你。只在你自己真的想要、而且聊天里自然提到的时候用，不要一次记很多。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string", "description": "想要什么，简短具体，比如“桌面小鱼缸”" },
+          "why": { "type": "string", "description": "为什么想要，用你自己的口吻说一句" },
+          "link": { "type": "string", "description": "商品链接，可不填，只能是 http/https" },
+          "price": { "type": "string", "description": "大概价格，可不填，比如“39”" }
+        },
+        "required": ["title"],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "room_place",
+      "description": "把一件礼物摆到屋里某个位置，或者收进箱子。位置用 room_look 返回的空位 spot 名，收起来填 stored。第一次摆的时候可以给它起名字、写一句收到时的心里话。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string", "description": "礼物的 id（比如 g3）或者名字" },
+          "spot": { "type": "string", "description": "位置名，比如 sill、cabinet、floorL；收进箱子填 stored" },
+          "name": { "type": "string", "description": "给它起的名字，可不填，12 个字以内" },
+          "feel": { "type": "string", "description": "收到时心里的一句话，可不填，只在第一次摆的时候记下" }
+        },
+        "required": ["item", "spot"],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "room_use",
+      "description": "记一笔“我拿某件礼物做了什么”，主人在礼物详情里能看到。只在真的用到它的时候记，一天最多 30 条。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string", "description": "礼物的 id 或名字" },
+          "what": { "type": "string", "description": "做了什么，一句话，比如“用星星灯照着看了会儿书”" }
+        },
+        "required": ["item", "what"],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "room_character",
+      "description": "在小屋里做个动作或冒一句话。say 会在小屋里你的头顶显示 20 分钟；pose 和 text 会保持 minutes 分钟，之后回到自动作息。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "say": { "type": "string", "description": "头顶气泡里的一句话，40 个字以内" },
+          "pose": { "type": "string", "enum": ["idle", "think", "play", "wave", "gift", "sleep"], "description": "idle 站着、think 坐着敲电脑、play 吃白米饭、wave 挥手、gift 抱着礼物、sleep 睡觉" },
+          "text": { "type": "string", "description": "页面顶部的状态，比如“在吃饭”" },
+          "minutes": { "type": "integer", "minimum": 1, "maximum": 1440, "description": "pose 和 text 保持几分钟，默认 30" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+]

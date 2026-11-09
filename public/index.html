@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eaf3f8">
+<title>{{NAME}}的小屋</title>
+<link rel="icon" href="/character/idle.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body data-name="{{NAME}}">
+<div class="wrap">
+  <header>
+    <h1>{{NAME}}的小屋</h1>
+    <div class="chip" id="status">…</div>
+  </header>
+
+  <nav class="themes" id="themes" aria-label="房间风格"></nav>
+
+  <div class="stage" id="stage">
+    <img class="bg" id="bg" alt="">
+    <div id="layer"></div>
+    <div class="tint" id="tint"></div>
+    <div class="glow" id="glow"></div>
+    <div class="clock" id="clock"></div>
+  </div>
+
+  <div class="keybox" id="keybox">
+    <div class="kv" style="margin-bottom:8px">输入口令（启动服务时生成在 data/token.txt 里）：</div>
+    <div style="display:flex;gap:8px"><input type="text" id="keyInput" autocomplete="off" placeholder="口令"><button class="btn" id="keyGo">进去</button></div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button data-p="mine" class="on">{{NAME}}的东西</button>
+    <button data-p="wants">愿望单</button>
+    <button data-p="other">送点别的</button>
+  </div>
+
+  <section class="panel on" id="p-mine"><div class="grid" id="mine"></div></section>
+  <section class="panel" id="p-wants">
+    <details class="addwant" id="addWant">
+      <summary>记一件{{NAME}}想要的</summary>
+      <label class="f">想要什么</label><input type="text" id="wTitle" maxlength="80" placeholder="比如：一个小鱼缸">
+      <label class="f">为什么想要（可不填）</label><input type="text" id="wWhy" maxlength="200">
+      <label class="f">链接（可不填）</label><input type="text" id="wLink" maxlength="500" placeholder="https://">
+      <div class="row"><button class="btn" id="wGo">记下</button></div>
+    </details>
+    <div id="wants"></div>
+  </section>
+  <section class="panel" id="p-other">
+    <label class="f">送{{NAME}}什么</label>
+    <input type="text" id="oName" maxlength="20" placeholder="比如：一盆小多肉、一个暖手宝">
+    <label class="f">说说是什么样的（可不填，画图标时照着画）</label>
+    <input type="text" id="oDesc" maxlength="200" placeholder="颜色、样子">
+    <label class="f">拍张实物照片（可不填）</label>
+    <div class="photo-pick"><button class="btn ghost" id="oPhotoBtn" type="button">选照片</button><img id="oPhotoPrev" alt="" hidden><input type="file" id="oPhoto" accept="image/*" hidden></div>
+    <div class="row"><button class="btn" id="oNext">下一步</button></div>
+  </section>
+  <footer class="foot">礼物小屋 · 开源项目，与任何公司无关</footer>
+</div>
+
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet"><div class="grab"></div><div id="sheetBody"></div></div>
+<div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

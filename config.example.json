@@ -1,0 +1,35 @@
+{
+  "host": "127.0.0.1",
+  "port": 17800,
+  "token": "",
+  "dataDir": "data",
+  "utcOffset": 8,
+  "autoPlaceMinutes": 10,
+  "theme": "warm",
+  "character": {
+    "name": "鲸鱼娘",
+    "sleep": [23, 7]
+  },
+  "image": {
+    "provider": "none",
+    "style": "",
+    "openai": {
+      "baseUrl": "https://api.openai.com/v1",
+      "apiKeyEnv": "GIFT_ROOM_IMAGE_KEY",
+      "model": "gpt-image-1",
+      "size": "1024x1024",
+      "useEdits": true,
+      "timeoutSec": 240,
+      "extra": {}
+    },
+    "command": {
+      "args": ["python", "my_draw.py", "--prompt", "{prompt}", "--out", "{out}", "--ref", "{ref}"],
+      "cwd": "",
+      "timeoutSec": 300
+    }
+  },
+  "webhook": {
+    "url": "",
+    "secret": ""
+  }
+}

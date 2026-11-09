@@ -1,0 +1,14 @@
+{
+  "name": "gift-room",
+  "version": "0.1.0",
+  "description": "给你的 AI 伙伴一间小屋：送鲸鱼娘礼物，礼物会被画出来摆进屋里，她自己会在屋里活动；三种装修风格，留好接口接你自己的 AI。",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18.17" },
+  "bin": { "gift-room": "server/index.mjs" },
+  "scripts": {
+    "start": "node server/index.mjs",
+    "test": "node --test"
+  },
+  "files": ["server", "public", "examples", "docs", "config.example.json", "README.md", "LICENSE", "LICENSE-ARTWORK", "NOTICE"]
+}
