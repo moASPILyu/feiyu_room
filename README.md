@@ -24,8 +24,8 @@
 需要 Node.js 18.17 或更高版本，没有任何依赖。
 
 ```bash
-git clone <仓库地址> gift-room
-cd gift-room
+git clone https://github.com/moASPILyu/feiyu_room.git
+cd feiyu_room
 npm start
 ```
 

@@ -12,9 +12,9 @@
 ## 一、装好跑起来
 
 1. **装 Node.js**：到 <https://nodejs.org> 下载 LTS 版本，一路下一步装完。需要 18.17 或更高版本。
-2. **下载这个项目**：在 GitHub 页面点 **Code → Download ZIP**，解压到一个好找的地方。会用 git 的话直接 `git clone` 也行。
+2. **下载这个项目**：在 GitHub 页面点 **Code → Download ZIP**，解压到一个好找的地方。会用 git 的话也可以 `git clone https://github.com/moASPILyu/feiyu_room.git`。
 3. **打开命令行，进到项目文件夹**：
-   - Windows：打开解压出来的 `gift-room` 文件夹，在地址栏里输入 `powershell`，然后按回车。
+   - Windows：打开解压出来的 `feiyu_room-main` 文件夹（用 git clone 的话叫 `feiyu_room`），在地址栏里输入 `powershell`，然后按回车。
    - macOS：打开“终端”，输入 `cd `（cd 后面有个空格），把文件夹拖进终端窗口，然后按回车。
 4. **启动**：输入下面这行，然后按回车。
 
